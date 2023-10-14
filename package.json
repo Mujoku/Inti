@@ -1,5 +1,13 @@
 {
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "deploy:stop-container": "docker stop test-server || true",
+    "deploy:remove-container": "docker container rm test-server || true",
+    "deploy:start-container": "docker run --name test-server -d -p 8121:3000 test-server",
+    "deploy:docker-build": "docker build . -t test-server",
+    "deploy": "npm run deploy:docker-build && npm run deploy:stop-container && npm run deploy:remove-container && npm run deploy:start-container"
   }
 }
