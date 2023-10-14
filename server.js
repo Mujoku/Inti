@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.send("This was deployed automatically now go!");
+  res.send("This was deployed automatically now go finally!");
 });
 
 app.listen(port, () => {
