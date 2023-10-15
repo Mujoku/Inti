@@ -2,7 +2,7 @@ FROM node:lts-alpine
 
 WORKDIR /usr/src/app
 
-COPY ./app/index.js .
+COPY ./app.js .
 COPY ./server.js .
 COPY ./package.json .
 COPY ./package-lock.json .
