@@ -18,7 +18,9 @@ jobs:
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add - <<< "${{ secrets.SSH_KEY }}"
       - name: Deploy
-        run: npm run deploy
+        run: |
+          docker-machine regenerate-certs default
+          npm run deploy
         env:
           DOCKER_HOST: ssh://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PORT }}
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
