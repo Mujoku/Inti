@@ -9,7 +9,7 @@ const app = express();
 /*
   TODO: The logging Section.
 */
-app.use(morganMiddleware);
+// app.use(morganMiddleware);
 
 // Use Helmet!
 app.use(helmet());
@@ -20,22 +20,22 @@ const printer = () => "ES6 in action";
 
 app.get("/", (req, res) => {
   res.send(printer());
-  logger.info("Info log");
+  // logger.info("Info log");
 });
 
-app.get("/crypto", async (req, res) => {
-  try {
-    const response = await axios.get(
-      "https://api2.binance.com/api/v3/ticker/24hr"
-    );
+// app.get("/crypto", async (req, res) => {
+//   try {
+//     const response = await axios.get(
+//       "https://api2.binance.com/api/v3/ticker/24hr"
+//     );
 
-    const tickerPrice = response.data;
+//     const tickerPrice = response.data;
 
-    res.json(tickerPrice);
-  } catch (err) {
-    logger.error(err);
-    res.status(500).send("Internal server error");
-  }
-});
+//     res.json(tickerPrice);
+//   } catch (err) {
+//     logger.error(err);
+//     res.status(500).send("Internal server error");
+//   }
+// });
 
 export default app;
