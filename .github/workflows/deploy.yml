@@ -2,12 +2,6 @@ name: Remote Deploy
 
 on: [push]
 
-spec:
-  template:
-    spec:
-      env:
-        - name: STARTUP_DELAY_IN_SECONDS
-          value: "45"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,6 +17,15 @@ jobs:
           ssh-keyscan -p ${{ secrets.SSH_PORT }} -t rsa ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add - <<< "${{ secrets.SSH_KEY }}"
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Deploy
         run: npm run deploy
         env:
