@@ -9,7 +9,7 @@ const app = express();
 /*
   TODO: The logging Section.
 */
-// app.use(morganMiddleware);
+app.use(morganMiddleware);
 
 // Use Helmet!
 app.use(helmet());
@@ -20,7 +20,7 @@ const printer = () => "ES6 in action";
 
 app.get("/", (req, res) => {
   res.send(printer());
-  // logger.info("Info log");
+  logger.info("Info log");
 });
 
 // app.get("/crypto", async (req, res) => {
