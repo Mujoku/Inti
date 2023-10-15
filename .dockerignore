@@ -1,0 +1,46 @@
+# Ignore Node.js-specific files and folders
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Ignore development and build files
+*.log
+*.env
+*.local
+*.test
+*.tests
+*.spec
+*.test.js
+*.tests.js
+*.spec.js
+test/
+tests/
+__tests__/
+
+# Ignore version control system files
+.git
+.gitignore
+
+# Ignore editor-specific files and folders
+.vscode/
+.idea/
+
+# Ignore Docker-specific files and folders
+.dockerignore
+Dockerfile
+
+# Ignore documentation and asset files
+docs/
+assets/
+
+# Ignore unnecessary project-specific files
+config/
+.env
+
+# Ignore build artifacts
+build/
+dist/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db

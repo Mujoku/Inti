@@ -6,21 +6,17 @@ import morganMiddleware from "./loggers/morgan.js";
 
 const app = express();
 
-/*
-  TODO: The logging Section.
-*/
+// Use morgan metadata logging
 app.use(morganMiddleware);
-
-// Use Helmet!
+// Use Helmet
 app.use(helmet());
 // Disable default X-Powered-By response header banner
 app.disable("x-powered-by");
 
-const printer = () => "ES6 in action";
-
 app.get("/", (req, res) => {
+  const printer = () => "ES6 in action";
   res.send(printer());
-  logger.info("Info log");
+  logger.info("Info logs");
 });
 
 app.get("/crypto", async (req, res) => {
