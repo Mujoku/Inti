@@ -18,7 +18,7 @@ jobs:
           ssh-keyscan -p ${{ secrets.SSH_PORT }} -t rsa ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add - <<< "${{ secrets.SSH_KEY }}"
-      - name: Set up SSH
+      - name: Set up SSH agent
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
