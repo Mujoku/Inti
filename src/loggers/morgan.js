@@ -1,5 +1,5 @@
 import morgan from "morgan";
-
+import logger from "./winston.js";
 // Morgan settings
 const morganMiddleware = morgan(
   function (tokens, req, res) {
