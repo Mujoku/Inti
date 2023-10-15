@@ -24,4 +24,4 @@ jobs:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
           DOCKER_TLS_VERIFY: 1
           DOCKER_MACHINE_NAME: default
-          DOCKER_CERT_PATH: /var/snap/docker/~current/etc/docker/certs.d
+          DOCKER_CERT_PATH: /var/snap/docker/
