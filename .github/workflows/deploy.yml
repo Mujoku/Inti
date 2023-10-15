@@ -19,7 +19,7 @@ jobs:
       #     ssh-agent -a $SSH_AUTH_SOCK > /dev/null
       #     ssh-add - <<< "${{ secrets.SSH_KEY }}"
       - name: Set up SSH
-        uses: appleboy/ssh-action@<latest_version>
+        uses: appleboy/ssh-action@main
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
           host: ${{ secrets.SSH_HOST }}
