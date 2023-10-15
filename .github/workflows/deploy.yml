@@ -17,21 +17,10 @@ jobs:
           ssh-keyscan -p ${{ secrets.SSH_PORT }} -t rsa ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add - <<< "${{ secrets.SSH_KEY }}"
-      - name: Generate certificates for next step
-        uses: kofemann/action-create-certificate@v0.0.4
-
-        with:
-          hostcert: "hostcert.pem"
-          hostkey: "hostkey.pem"
-          cachain: "ca.pem"
-
-      - name: Use generated certificates
-        run: |
-          openssl x509 -in hostcert.pem -noout -text
       - name: Deploy
         run: npm run deploy
         env:
           DOCKER_HOST: ssh://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PORT }}
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
           DOCKER_TLS_VERIFY: 1
-          DOCKER_CERT_PATH: /home/runner/
+          # DOCKER_CERT_PATH: /
