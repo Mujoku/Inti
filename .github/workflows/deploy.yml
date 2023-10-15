@@ -19,9 +19,12 @@ jobs:
       #     ssh-agent -a $SSH_AUTH_SOCK > /dev/null
       #     ssh-add - <<< "${{ secrets.SSH_KEY }}"
       - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5
+        uses: appleboy/ssh-action@v0.6
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: 8122
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
