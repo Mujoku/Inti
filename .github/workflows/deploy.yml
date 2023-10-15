@@ -17,6 +17,8 @@ jobs:
           ssh-keyscan -p ${{ secrets.SSH_PORT }} -t rsa ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add - <<< "${{ secrets.SSH_KEY }}"
+      - name: STARTUP_DELAY_IN_SECONDS
+        value: "45"
       - name: Deploy
         run: npm run deploy
         env:
