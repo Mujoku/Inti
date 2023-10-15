@@ -23,4 +23,4 @@ jobs:
           DOCKER_HOST: ssh://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PORT }}
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
           DOCKER_TLS_VERIFY: 1
-          DOCKER_CERT_PATH: /
+          DOCKER_CERT_PATH: ~
