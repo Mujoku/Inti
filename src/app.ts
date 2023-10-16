@@ -1,10 +1,10 @@
-import express from "express";
+import express, { Express, Request, Response } from "express";
 import helmet from "helmet";
 import axios from "axios";
 import logger from "./loggers/winston.js";
 import morganMiddleware from "./loggers/morgan.js";
 
-const app = express();
+const app: Express = express();
 
 // Use morgan metadata logging
 app.use(morganMiddleware);
@@ -13,13 +13,13 @@ app.use(helmet());
 // Disable default X-Powered-By response header banner
 app.disable("x-powered-by");
 
-app.get("/", (req, res) => {
-  const printer = () => "ES6 in action";
+app.get("/", (req: Request, res: Response) => {
+  const printer = () => "A project with ES6, TS ready.";
   res.send(printer());
   logger.info("Info logs");
 });
 
-app.get("/crypto", async (req, res) => {
+app.get("/crypto", async (req: Request, res: Response) => {
   try {
     const response = await axios.get(
       "https://api2.binance.com/api/v3/ticker/24hr"
