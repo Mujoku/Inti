@@ -6,6 +6,8 @@ COPY ./src/ ./src/
 COPY ./server.ts .
 COPY ./package.json .
 COPY ./package-lock.json .
+COPY ./tsconfig.json .
+
 
 RUN npm i
 
