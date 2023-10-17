@@ -1,0 +1,60 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "tabnine.experimentalAutoImports": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "appworks.materialSources": [],
+    "kite.showWelcomeNotificationOnStartup": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "terminal.integrated.rightClickBehavior": "default",
+    "terminal.integrated.scrollback": 100000,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "git.autofetch": true,
+    "editor.formatOnSave": true,
+    "console": "internalConsole",
+    "launch": {
+      "configurations": [],
+      "compounds": []
+    },
+    "terminal.integrated.cursorBlinking": true,
+    "code-runner.runInTerminal": true,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "graphql-config.dotEnvPath": "",
+    "[python]": {
+      "editor.defaultFormatter": null,
+      "editor.formatOnType": true
+    },
+    "settingsSync.ignoredSettings": ["-python.formatting.blackPath"],
+    "explorer.sortOrder": "type",
+    "window.zoomLevel": -1,
+    "svelte.enable-ts-plugin": true,
+    "editor.linkedEditing": true,
+    "redhat.telemetry.enabled": false,
+    "files.associations": {
+      "*.toml": "rust"
+    },
+    "terminal.integrated.fontSize": 13,
+    "workbench.startupEditor": "none",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "eslint.run": "onSave",
+    "eslint.validate": ["typescript"],
+    "eslint.workingDirectories": [
+      {
+        "mode": "auto"
+      }
+    ],
+    "[dockerfile]": {
+      "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    }
+  }
+}

@@ -6,13 +6,24 @@ import morganMiddleware from "./loggers/morgan.js";
 
 const app: Express = express();
 
-// Use morgan metadata logging
+/**
+ * TODO: 1. Prepare routes for webhooks
+ * TODO: 2. Prepare routes for the authentication
+ * TODO: 3. Prepare transformation layer for the data integration
+ * TODO: 4. Prepare controllers for request handling
+ * TODO: 5. Prepare services for the bussiness logic
+ */
+
+/**
+ * Use morgan metadata logging
+ * Configure safe headers with Helmet
+ * Disable default X-Powered-By response header banner
+ * */
 app.use(morganMiddleware);
-// Use Helmet
 app.use(helmet());
-// Disable default X-Powered-By response header banner
 app.disable("x-powered-by");
 
+// *
 app.get("/", (req: Request, res: Response) => {
   const printer = () => "A project with ES6, TS ready.";
   res.send(printer());
@@ -24,9 +35,7 @@ app.get("/crypto", async (req: Request, res: Response) => {
     const response = await axios.get(
       "https://api2.binance.com/api/v3/ticker/24hr"
     );
-
     const tickerPrice = response.data;
-
     res.json(tickerPrice);
   } catch (err) {
     logger.error(err);
