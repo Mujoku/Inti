@@ -23,9 +23,8 @@ app.use(morganMiddleware);
 app.use(helmet());
 app.disable("x-powered-by");
 
-// *
 app.get("/", (req: Request, res: Response) => {
-  const printer = () => "A project with ES6, TS ready.";
+  const printer = () => "A project with ES6, TS ready and dev tools installed!";
   res.send(printer());
   logger.info("Info logs");
 });
