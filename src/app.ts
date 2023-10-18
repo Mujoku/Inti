@@ -1,5 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import helmet from "helmet";
+import helmetCsp from "helmet-csp";
 import morganMiddleware from "./loggers/morgan.js";
 import routes from "./routes/routes.js";
 
@@ -19,10 +20,9 @@ const app: Express = express();
  * Disable default X-Powered-By response header banner
  * */
 app.use(morganMiddleware);
-app.use(helmet());
+// app.use(helmet());
 app.disable("x-powered-by");
 
 // Composed pipeline for the routes
 app.use("/api", routes);
-
 export default app;
