@@ -7,13 +7,13 @@ import ipWhitelistMiddleware from "./middleware/ipWhitelistMiddleware.js";
 
 const app: Express = express();
 
-// Morgan Logger middleware.
+// Morgan Logger middleware
 app.use(morganLogger);
 // app.use(helmet());
 app.disable("x-powered-by");
-// IP Whitelist middleware.
+// IP Whitelist middleware
 app.use(ipWhitelistMiddleware);
-// Composed pipeline for the routes.
+// Composed pipeline for the routes
 app.use("/api", routes);
 
 export default app;
