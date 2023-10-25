@@ -38,7 +38,7 @@ async function makeRequest(
   const requestConfig: AxiosRequestConfig = {
     method: verb,
     maxBodyLength: Infinity,
-    url: "https://api.baselinker.com/connector.php",
+    url: config.baselinker.connectorUrl,
     headers: {
       "X-BLToken": config.baselinker.blToken,
       "Content-Type": "application/x-www-form-urlencoded",

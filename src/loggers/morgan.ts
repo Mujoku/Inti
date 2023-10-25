@@ -2,7 +2,7 @@ import morgan from "morgan";
 import logger from "./winston.js";
 
 // Morgan settings
-const morganMiddleware = morgan(
+const morganLogger = morgan(
   function (tokens, req, res) {
     const clientIP = req.headers["x-forwarded-for"] || req.socket.remoteAddress; // Replace connection with socket
     return JSON.stringify({
@@ -14,7 +14,6 @@ const morganMiddleware = morgan(
         tokens["response-time"](req, res) as string
       ), // Add type assertion as string
       remote_address: clientIP, // Use client's IP address
-      remote_user: tokens["remote-user"](req, res) as string, // Add type assertion as string
     });
   },
   {
@@ -28,4 +27,4 @@ const morganMiddleware = morgan(
   }
 );
 
-export default morganMiddleware;
+export default morganLogger;

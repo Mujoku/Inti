@@ -15,3 +15,5 @@ The project structure:
 | |- config/
 | |- utils/
 | |- tests/
+
+The project uses https://github.com/MONEI/Shopify-api-node as Shopify Admin API connector.

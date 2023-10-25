@@ -15,6 +15,9 @@ interface BaselinkerConfig {
 interface AppConfig {
   shopify: ShopifyConfig;
   baselinker: BaselinkerConfig;
+  whitelist: {
+    ipList: string;
+  };
 }
 
 function checkEnvVariable(key: string, defaultValue?: string): string {
@@ -43,9 +46,12 @@ const config: AppConfig = {
   baselinker: {
     connectorUrl: checkEnvVariable(
       "BASELINKER_CONNECTOR_URL",
-      "https://your-baselinker-store.myshopify.com"
+      "https://api.baselinker.com/connector.php"
     ),
     blToken: checkEnvVariable("BASELINKER_TOKEN", "your-baselinker-token"), // You can get your token in your Baselinker account
+  },
+  whitelist: {
+    ipList: checkEnvVariable("IP_WHITELIST", "127.0.0.1"),
   },
 };
 
