@@ -11,7 +11,7 @@ const app: Express = express();
 app.use(morganLogger);
 // app.use(helmet());
 app.disable("x-powered-by");
-// IP Whitelist middleware
+// IP Whitelist middleware (only allow requests from the IP addresses in the whitelist)
 app.use(ipWhitelistMiddleware);
 // Composed pipeline for the routes
 app.use("/api", routes);
