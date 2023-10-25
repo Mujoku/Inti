@@ -38,7 +38,7 @@ const config: AppConfig = {
       "SHOPIFY_API_SECRET",
       "your-shopify-api-secret"
     ),
-    apiVersion: checkEnvVariable("SHOPIFY_API_VERSION", "2021-04"),
+    apiVersion: checkEnvVariable("SHOPIFY_API_VERSION", "2023-10"),
   },
   baselinker: {
     connectorUrl: checkEnvVariable(

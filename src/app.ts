@@ -1,10 +1,22 @@
 import express, { Express, Request, Response } from "express";
-import helmet from "helmet";
-import helmetCsp from "helmet-csp";
+// import helmet from "helmet";
+// import helmetCsp from "helmet-csp";
 import morganMiddleware from "./loggers/morgan.js";
 import routes from "./routes/routes.js";
+import shopify from "./services/shopify.js";
 
 const app: Express = express();
+
+app.get("/", (req: Request, res: Response) => {
+  shopify.product
+    .create({
+      title: "Burton Custom Freestyle 154",
+      body_html: "<strong>Good snowboard!</strong>",
+    })
+    .then((products) => console.log(products))
+    .catch((err) => console.error(err));
+  res.send("Hello World!");
+});
 
 /**
  * TODO: 1. Prepare routes for webhooks

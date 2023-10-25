@@ -30,6 +30,7 @@
     "helmet-csp": "^3.4.0",
     "morgan": "^1.10.0",
     "rimraf": "^5.0.5",
+    "shopify-api-node": "^3.12.7",
     "typescript": "^5.2.2",
     "winston": "^3.11.0"
   },
