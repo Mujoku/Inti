@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
 import qs from "qs";
-import config from "../config/config.js"; // Import your configuration
+import config from "../../config/config.js"; // Import your configuration
 
 interface BaselinkerRequestOptions {
   method: string;

@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import { Request, Response } from "express";
 import getProductList from "../services/getProductList.js";
 
 const getProducts = async (req: Request, res: Response) => {

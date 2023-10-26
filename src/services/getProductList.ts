@@ -1,4 +1,4 @@
-import * as baselinker from "./baselinker.js";
+import * as baselinker from "./connectors/baselinker.js";
 
 export default async function getProductList() {
   const parameters = { inventory_id: "3807", page: 1 };
@@ -20,3 +20,5 @@ export default async function getProductList() {
 
   return transformedData;
 }
+
+// prepare import to Shopify

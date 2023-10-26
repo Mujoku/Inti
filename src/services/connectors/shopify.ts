@@ -1,5 +1,5 @@
 import Shopify from "shopify-api-node";
-import config from "../config/config.js";
+import config from "../../config/config.js";
 
 const shopify = new Shopify({
   shopName: config.shopify.url,
