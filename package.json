@@ -19,7 +19,7 @@
     "deploy": "npm run deploy:docker-build && npm run deploy:stop-container && npm run deploy:remove-container && npm run deploy:start-container"
   },
   "dependencies": {
-    "@types/express": "^4.17.19",
+    "@types/express": "^4.17.20",
     "@types/morgan": "^1.9.6",
     "@types/node": "^20.8.6",
     "axios": "^1.5.1",
